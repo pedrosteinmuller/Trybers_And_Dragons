@@ -18,8 +18,7 @@ const pvp = new PVP(player2, player3);
 const pve = new PVE(player1, [monster1, monster2]);
 
 const runBattles = (battles: Battle[]) => {
-  const finalResult = battles.map((battle: Battle) => battle.fight());
-  console.log((finalResult));
+  battles.map((battle: Battle) => battle.fight());
 };
 
 export {
