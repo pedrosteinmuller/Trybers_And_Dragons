@@ -1,14 +1,15 @@
-import Character from '../Character';
 import Fighter, { SimpleFighter } from '../Fighter';
 import Monster from '../Monster';
 import Battle from './Battle';
 
 export default class PVE extends Battle {
-  constructor(
-    private _player: Character | Fighter,
-    private _arrayMonster: (Fighter | SimpleFighter | Monster | Character)[],
-  ) {
-    super(_player);
+  private _player: Fighter;
+  private _arrayMonster: (Monster | SimpleFighter)[];
+  
+  constructor(player: Fighter, arrayMonster: (Monster | SimpleFighter)[]) {
+    super(player);
+    this._player = player;
+    this._arrayMonster = arrayMonster;
   }
 
   private attackMonsters(): void {
